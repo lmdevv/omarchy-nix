@@ -58,7 +58,4 @@ in {
       package = pkgs.gnome-themes-extra;
     };
   };
-
-  # TODO: Add an actual nvim config
-  programs.neovim.enable = true;
 }
