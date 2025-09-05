@@ -30,6 +30,13 @@ in {
         "SUPER, V, togglefloating,"
         "SUPER SHIFT, Plus, fullscreen,"
 
+        # Tab groups (i3-like): create group and navigate within it
+        "SUPER, G, togglegroup,"
+        "CTRL SUPER, h, changegroupactive, b"
+        "CTRL SUPER, l, changegroupactive, f"
+        "CTRL SUPER, k, changegroupactive, b"
+        "CTRL SUPER, j, changegroupactive, f"
+
         # Move focus with mainMod + vim keys
         "SUPER, h, movefocus, l"
         "SUPER, l, movefocus, r"
