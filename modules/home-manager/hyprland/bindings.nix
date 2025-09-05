@@ -22,19 +22,19 @@ in {
         "SUPER SHIFT, ESCAPE, exit,"
         "SUPER CTRL, ESCAPE, exec, reboot"
         "SUPER SHIFT CTRL, ESCAPE, exec, systemctl poweroff"
-        "SUPER, K, exec, ~/.local/share/omarchy/bin/omarchy-show-keybindings"
+        "SUPER, semicolon, exec, ~/.local/share/omarchy/bin/omarchy-show-keybindings"
 
         # Control tiling
-        "SUPER, J, togglesplit, # dwindle"
+        "SUPER, I, togglesplit, # dwindle"
         "SUPER, P, pseudo, # dwindle"
         "SUPER, V, togglefloating,"
         "SUPER SHIFT, Plus, fullscreen,"
 
-        # Move focus with mainMod + arrow keys
-        "SUPER, left, movefocus, l"
-        "SUPER, right, movefocus, r"
-        "SUPER, up, movefocus, u"
-        "SUPER, down, movefocus, d"
+        # Move focus with mainMod + vim keys
+        "SUPER, h, movefocus, l"
+        "SUPER, l, movefocus, r"
+        "SUPER, k, movefocus, u"
+        "SUPER, j, movefocus, d"
 
         # Switch workspaces with mainMod + [0-9]
         "SUPER, 1, workspace, 1"
@@ -63,11 +63,11 @@ in {
         "SUPER SHIFT, 9, movetoworkspace, 9"
         "SUPER SHIFT, 0, movetoworkspace, 10"
 
-        # Swap active window with the one next to it with mainMod + SHIFT + arrow keys
-        "SUPER SHIFT, left, swapwindow, l"
-        "SUPER SHIFT, right, swapwindow, r"
-        "SUPER SHIFT, up, swapwindow, u"
-        "SUPER SHIFT, down, swapwindow, d"
+        # Swap active window with the one next to it with mainMod + SHIFT + vim keys
+        "SUPER SHIFT, h, swapwindow, l"
+        "SUPER SHIFT, l, swapwindow, r"
+        "SUPER SHIFT, k, swapwindow, u"
+        "SUPER SHIFT, j, swapwindow, d"
 
         # Resize active window
         "SUPER, minus, resizeactive, -100 0"
