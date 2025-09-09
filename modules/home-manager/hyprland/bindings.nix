@@ -14,8 +14,7 @@ in {
         # "SUPER CTRL, SPACE, exec, ~/.local/share/omarchy/bin/swaybg-next"
         # "SUPER SHIFT CTRL, SPACE, exec, ~/.local/share/omarchy/bin/omarchy-theme-next"
 
-        "SUPER, W, killactive,"
-        "SUPER, Backspace, killactive,"
+        "SUPER, Q, killactive,"
 
         # End active session
         "SUPER, ESCAPE, exec, hyprlock"
@@ -54,7 +53,7 @@ in {
         "SUPER, 8, workspace, 8"
         "SUPER, 9, workspace, 9"
         "SUPER, 0, workspace, 10"
-        
+
         "SUPER, comma, workspace, -1"
         "SUPER, period, workspace, +1"
 
