@@ -37,7 +37,7 @@ let
     # TUIs
     lazygit
     lazydocker
-    btop
+    # btop
     powertop
     fastfetch
 
