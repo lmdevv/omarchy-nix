@@ -2,110 +2,109 @@
   config,
   pkgs,
   ...
-}: let
+}:
+let
   cfg = config.omarchy;
-in {
+in
+{
   wayland.windowManager.hyprland.settings = {
-    bind =
-      cfg.quick_app_bindings
-      ++ [
-        "SUPER, space, exec, wofi --show drun --sort-order=alphabetical"
-        "SUPER SHIFT, SPACE, exec, pkill -SIGUSR1 waybar"
-        # "SUPER CTRL, SPACE, exec, ~/.local/share/omarchy/bin/swaybg-next"
-        # "SUPER SHIFT CTRL, SPACE, exec, ~/.local/share/omarchy/bin/omarchy-theme-next"
+    bind = cfg.quick_app_bindings ++ [
+      "SUPER, space, exec, wofi --show drun --sort-order=alphabetical"
+      "SUPER SHIFT, SPACE, exec, pkill -SIGUSR1 waybar"
+      # "SUPER CTRL, SPACE, exec, ~/.local/share/omarchy/bin/swaybg-next"
+      # "SUPER SHIFT CTRL, SPACE, exec, ~/.local/share/omarchy/bin/omarchy-theme-next"
 
-        "SUPER, Q, killactive,"
+      "SUPER, Q, killactive,"
 
-        # End active session
-        "SUPER, ESCAPE, exec, hyprlock"
-        "SUPER SHIFT, ESCAPE, exit,"
-        "SUPER CTRL, ESCAPE, exec, reboot"
-        "SUPER SHIFT CTRL, ESCAPE, exec, systemctl poweroff"
-        "SUPER, semicolon, exec, ~/.local/share/omarchy/bin/omarchy-show-keybindings"
+      # End active session
+      "SUPER, ESCAPE, exec, hyprlock"
+      "SUPER SHIFT, ESCAPE, exit,"
+      "SUPER CTRL, ESCAPE, exec, reboot"
+      "SUPER SHIFT CTRL, ESCAPE, exec, systemctl poweroff"
+      "SUPER, semicolon, exec, ~/.local/share/omarchy/bin/omarchy-show-keybindings"
 
-        # Control tiling
-        "SUPER, I, togglesplit, # dwindle"
-        "SUPER, P, pseudo, # dwindle"
-        "SUPER, V, togglefloating,"
-        "SUPER SHIFT, Plus, fullscreen,"
+      # Control tiling
+      "SUPER, I, togglesplit, # dwindle"
+      "SUPER, P, pseudo, # dwindle"
+      "SUPER, V, togglefloating,"
+      "SUPER SHIFT, Plus, fullscreen,"
 
-        # Tab groups (i3-like): create group and navigate within it
-        "SUPER, G, togglegroup,"
-        "CTRL SUPER, h, changegroupactive, b"
-        "CTRL SUPER, l, changegroupactive, f"
-        "CTRL SUPER, k, changegroupactive, b"
-        "CTRL SUPER, j, changegroupactive, f"
+      # Tab groups (i3-like): create group and navigate within it
+      "SUPER, G, togglegroup,"
+      "CTRL SUPER, h, changegroupactive, b"
+      "CTRL SUPER, l, changegroupactive, f"
+      "CTRL SUPER, k, changegroupactive, b"
+      "CTRL SUPER, j, changegroupactive, f"
 
-        # Move focus with mainMod + vim keys
-        "SUPER, h, movefocus, l"
-        "SUPER, l, movefocus, r"
-        "SUPER, k, movefocus, u"
-        "SUPER, j, movefocus, d"
+      # Move focus with mainMod + vim keys
+      "SUPER, h, movefocus, l"
+      "SUPER, l, movefocus, r"
+      "SUPER, k, movefocus, u"
+      "SUPER, j, movefocus, d"
 
-        # Switch workspaces with mainMod + [0-9]
-        "SUPER, 1, workspace, 1"
-        "SUPER, 2, workspace, 2"
-        "SUPER, 3, workspace, 3"
-        "SUPER, 4, workspace, 4"
-        "SUPER, 5, workspace, 5"
-        "SUPER, 6, workspace, 6"
-        "SUPER, 7, workspace, 7"
-        "SUPER, 8, workspace, 8"
-        "SUPER, 9, workspace, 9"
-        "SUPER, 0, workspace, 10"
+      # Switch workspaces with mainMod + [0-9]
+      "SUPER, 1, workspace, 1"
+      "SUPER, 2, workspace, 2"
+      "SUPER, 3, workspace, 3"
+      "SUPER, 4, workspace, 4"
+      "SUPER, 5, workspace, 5"
+      "SUPER, 6, workspace, 6"
+      "SUPER, 7, workspace, 7"
+      "SUPER, 8, workspace, 8"
+      "SUPER, 9, workspace, 9"
+      "SUPER, 0, workspace, 10"
 
-        "SUPER, comma, workspace, -1"
-        "SUPER, period, workspace, +1"
+      "SUPER, comma, workspace, -1"
+      "SUPER, period, workspace, +1"
 
-        # Move active window to a workspace with mainMod + SHIFT + [0-9]
-        "SUPER SHIFT, 1, movetoworkspace, 1"
-        "SUPER SHIFT, 2, movetoworkspace, 2"
-        "SUPER SHIFT, 3, movetoworkspace, 3"
-        "SUPER SHIFT, 4, movetoworkspace, 4"
-        "SUPER SHIFT, 5, movetoworkspace, 5"
-        "SUPER SHIFT, 6, movetoworkspace, 6"
-        "SUPER SHIFT, 7, movetoworkspace, 7"
-        "SUPER SHIFT, 8, movetoworkspace, 8"
-        "SUPER SHIFT, 9, movetoworkspace, 9"
-        "SUPER SHIFT, 0, movetoworkspace, 10"
+      # Move active window to a workspace with mainMod + SHIFT + [0-9]
+      "SUPER SHIFT, 1, movetoworkspace, 1"
+      "SUPER SHIFT, 2, movetoworkspace, 2"
+      "SUPER SHIFT, 3, movetoworkspace, 3"
+      "SUPER SHIFT, 4, movetoworkspace, 4"
+      "SUPER SHIFT, 5, movetoworkspace, 5"
+      "SUPER SHIFT, 6, movetoworkspace, 6"
+      "SUPER SHIFT, 7, movetoworkspace, 7"
+      "SUPER SHIFT, 8, movetoworkspace, 8"
+      "SUPER SHIFT, 9, movetoworkspace, 9"
+      "SUPER SHIFT, 0, movetoworkspace, 10"
 
-        # Swap active window with the one next to it with mainMod + SHIFT + vim keys
-        "SUPER SHIFT, h, swapwindow, l"
-        "SUPER SHIFT, l, swapwindow, r"
-        "SUPER SHIFT, k, swapwindow, u"
-        "SUPER SHIFT, j, swapwindow, d"
+      # Swap active window with the one next to it with mainMod + SHIFT + vim keys
+      "SUPER SHIFT, h, swapwindow, l"
+      "SUPER SHIFT, l, swapwindow, r"
+      "SUPER SHIFT, k, swapwindow, u"
+      "SUPER SHIFT, j, swapwindow, d"
 
-        # Resize active window
-        "SUPER, minus, resizeactive, -100 0"
-        "SUPER, equal, resizeactive, 100 0"
-        "SUPER SHIFT, minus, resizeactive, 0 -100"
-        "SUPER SHIFT, equal, resizeactive, 0 100"
+      # Resize active window
+      "SUPER, minus, resizeactive, -100 0"
+      "SUPER, equal, resizeactive, 100 0"
+      "SUPER SHIFT, minus, resizeactive, 0 -100"
+      "SUPER SHIFT, equal, resizeactive, 0 100"
 
-        # Scroll through existing workspaces with mainMod + scroll
-        "SUPER, mouse_down, workspace, e+1"
-        "SUPER, mouse_up, workspace, e-1"
+      # Scroll through existing workspaces with mainMod + scroll
+      "SUPER, mouse_down, workspace, e+1"
+      "SUPER, mouse_up, workspace, e-1"
 
-        # Control Apple Display brightness
-        "CTRL, F1, exec, ~/.local/share/omarchy/bin/apple-display-brightness -5000"
-        "CTRL, F2, exec, ~/.local/share/omarchy/bin/apple-display-brightness +5000"
-        "SHIFT CTRL, F2, exec, ~/.local/share/omarchy/bin/apple-display-brightness +60000"
+      # Control Apple Display brightness
+      "CTRL, F1, exec, ~/.local/share/omarchy/bin/apple-display-brightness -5000"
+      "CTRL, F2, exec, ~/.local/share/omarchy/bin/apple-display-brightness +5000"
+      "SHIFT CTRL, F2, exec, ~/.local/share/omarchy/bin/apple-display-brightness +60000"
 
-        # Super workspace floating layer
-        # "SUPER, S, togglespecialworkspace, magic"
-        # "SUPER SHIFT, S, movetoworkspace, special:magic"
+      # Super workspace floating layer
+      # "SUPER, S, togglespecialworkspace, magic"
+      # "SUPER SHIFT, S, movetoworkspace, special:magic"
 
-        # Screenshots
-        "SUPER SHIFT, S, exec, hyprshot -m region"
-        "SUPER, S, exec, hyprshot -m window"
-        "SUPER CTRL, S, exec, hyprshot -m output"
+      # Screenshots
+      "SUPER SHIFT, S, exec, hyprshot -m region"
+      "SUPER, S, exec, hyprshot -m window"
+      "SUPER CTRL, S, exec, hyprshot -m output"
 
-        # Color picker
-        "SUPER ALT, P, exec, hyprpicker -a"
+      # Color picker
+      "SUPER ALT, P, exec, hyprpicker -a"
 
-
-        # Clipse
-        "SUPER SHIFT, V, exec, ghostty --class clipse -e clipse"
-      ];
+      # Clipse
+      "SUPER SHIFT, V, exec, ghostty --class clipse -e clipse"
+    ];
 
     bindm = [
       # Move/resize windows with mainMod + LMB/RMB and dragging
