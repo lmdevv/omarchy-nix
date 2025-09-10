@@ -15,6 +15,9 @@ in {
       background-opacity = 0.95;
       window-decoration = "none";
 
+      # Use zsh as the default shell in Ghostty
+      command = "${pkgs.zsh}/bin/zsh";
+
       font-family = cfg.primary_font;
       font-size = 12;
 
