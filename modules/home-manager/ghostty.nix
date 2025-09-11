@@ -23,7 +23,7 @@ in {
 
       theme = "omarchy";
       keybind = [
-        "ctrl+k=reset"
+        # "ctrl+k=reset"
       ];
     };
     themes = {
